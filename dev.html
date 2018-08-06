@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>UploadImage</title>
+	<link rel="stylesheet" type="text/css" href="dev.css">
+	<script type="application/javascript" src="dev.js"></script>
+	<script type="application/javascript" src="quagga.min.js"></script>
+</head>
+<body>
+
+<h1>UploadImage</h1>
+
+	<table>
+		<tr>
+			<td>InventarNr.</td>
+			<td>
+				<input type="number" name="invnr" id="invnr" min="0" max="999999" step="1" value="0"/>
+				<input type="file" onchange="InvSelected(this)" capture="camera" accept="image/*" id="cameraInv" name="cameraInv"/>
+			</td>
+		</tr>
+		<tr>
+			<td>SerienNr.</td>
+			<td>
+				<input type="text" name="srnr" id="srnr" value=""/>
+				<input type="file" onchange="SrSelected(this)" capture="camera" accept="image/*" id="cameraSr" name="cameraSr"/>
+			</td>
+		</tr>
+		<tr>
+			<td>Info</td>
+			<td><input type="text" name="info" id="info" value=""/></td>
+		</tr>
+		<tr>
+			<td><button type="button" onclick="send_images(); return false;">Send to Server</button></td>
+		</tr>
+	</table>
+	<h2>Bilder</h2>
+	<input type="file" onchange="ImageSelected(this)" capture="camera" accept="image/*" id="cameraInput" name="cameraInput"/>
+	<br>
+	<div id="images">
+	</div>
+</body>
+</html>
